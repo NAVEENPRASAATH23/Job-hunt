@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SiliconQuest | RTL Design Career Accelerator & Job Tracker</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="SiliconQuest is a premium interview preparation companion and job application tracker designed specifically for RTL design engineers in the semiconductor industry.">
+  <meta name="keywords" content="RTL Design, Verilog, SystemVerilog, Semiconductor, FPGA, ASIC, Interview Prep, Job Tracker, STA, CDC">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="20" height="20" rx="4" stroke="url(#logoGrad)" stroke-width="2" />
+          <path d="M7 7H17V17H7V7Z" fill="url(#logoGrad)" opacity="0.2" />
+          <path d="M9 12H15" stroke="url(#logoGrad)" stroke-width="2" stroke-linecap="round"/>
+          <path d="M12 9V15" stroke="url(#logoGrad)" stroke-width="2" stroke-linecap="round"/>
+          <path d="M2 8H4M2 12H4M2 16H4M20 8H22M20 12H22M20 16H22M8 2V4M12 2V4M16 2V4M8 20V22M12 20V22M16 20V22" stroke="url(#logoGrad)" stroke-width="1.5" stroke-linecap="round"/>
+          <defs>
+            <linearGradient id="logoGrad" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#00F2FE" />
+              <stop offset="100%" stop-color="#4FACFE" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="logo-text">Silicon<span class="logo-accent">Quest</span></span>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <ul>
+          <li>
+            <a href="#dashboard" class="nav-link active" data-tab="dashboard">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="9" />
+                <rect x="14" y="3" width="7" height="5" />
+                <rect x="14" y="12" width="7" height="9" />
+                <rect x="3" y="16" width="7" height="5" />
+              </svg>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="#tracker" class="nav-link" data-tab="tracker">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+                <path d="M9 16l2 2 4-4" />
+              </svg>
+              <span>Job Tracker</span>
+            </a>
+          </li>
+          <li>
+            <a href="#matcher" class="nav-link" data-tab="matcher">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              <span>Silicon Matcher</span>
+            </a>
+          </li>
+          <li>
+            <a href="#prep" class="nav-link" data-tab="prep">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                <path d="M2 17l10 5 10-5" />
+                <path d="M2 12l10 5 10-5" />
+              </svg>
+              <span>Interview Prep</span>
+            </a>
+          </li>
+          <li>
+            <a href="#waveform" class="nav-link" data-tab="waveform">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12h3l3-9 4 18 3-12h5" />
+              </svg>
+              <span>Signal Architect</span>
+            </a>
+          </li>
+          <li>
+            <a href="#directory" class="nav-link" data-tab="directory">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+              <span>Companies</span>
+            </a>
+          </li>
+          <li>
+            <a href="#sandbox" class="nav-link" data-tab="sandbox">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+                <line x1="14" y1="4" x2="10" y2="20" />
+              </svg>
+              <span>RTL Reference</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-profile">
+          <div class="avatar" style="background: linear-gradient(135deg, var(--primary-cyan) 0%, var(--primary-blue) 100%); color: var(--bg-deep); font-weight: 800;">YS</div>
+          <div class="user-info">
+            <span class="user-name">Yaswanthini S</span>
+            <span class="user-role">RTL Design Engineer</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      
+      <!-- Top Bar -->
+      <header class="top-bar">
+        <div class="tab-title-container">
+          <h1 id="current-tab-title">Dashboard</h1>
+          <p id="current-tab-subtitle">Hardware acceleration for your career search</p>
+        </div>
+        <div class="top-bar-actions">
+          <button id="add-job-shortcut" class="btn btn-primary btn-with-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            <span>Add Application</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Main Panels (Tabs) -->
+      <div class="tab-panels">
+        
+        <!-- DASHBOARD TAB -->
+        <section id="dashboard-panel" class="tab-panel active">
+          <!-- Welcome Hero Banner -->
+          <div class="hero-banner">
+            <div class="hero-content">
+              <h2>Launch Your Next Tape-Out 🚀</h2>
+              <p>Keep tracking your pipeline, Yaswanthini. You have 2+ YOE in RTL Design—your timing parameters are locked, your synthesizers are optimized. Let's land that dream job.</p>
+              <div class="hero-stats">
+                <div class="hero-stat-item">
+                  <span class="stat-num" id="stat-applied-count">0</span>
+                  <span class="stat-label">Applications</span>
+                </div>
+                <div class="hero-stat-item">
+                  <span class="stat-num" id="stat-interview-count">0</span>
+                  <span class="stat-label">Interviews Scheduled</span>
+                </div>
+                <div class="hero-stat-item">
+                  <span class="stat-num" id="stat-quiz-score">0%</span>
+                  <span class="stat-label">Quiz Accuracy</span>
+                </div>
+              </div>
+            </div>
+            <div class="hero-graphic">
+              <!-- Decorative silicon chip design -->
+              <svg viewBox="0 0 160 160" width="140" height="140" fill="none">
+                <rect x="30" y="30" width="100" height="100" rx="10" stroke="#00F2FE" stroke-width="3" stroke-dasharray="4 4" class="pulse-glow" />
+                <rect x="50" y="50" width="60" height="60" rx="4" fill="url(#chipGrad)" />
+                <path d="M10 50h20M10 80h20M10 110h20M130 50h20M130 80h20M130 110h20M50 10v20M80 10v20M110 10v20M50 130v20M80 130v20M110 130v20" stroke="#4FACFE" stroke-width="2" />
+                <circle cx="80" cy="80" r="12" fill="#0b132b" stroke="#00F2FE" stroke-width="2" />
+                <path d="M80 72v16M72 80h16" stroke="#00F2FE" stroke-width="1.5" />
+                <defs>
+                  <linearGradient id="chipGrad" x1="50" y1="50" x2="110" y2="110">
+                    <stop offset="0%" stop-color="#4FACFE" />
+                    <stop offset="100%" stop-color="#8A2387" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Dashboard Grid -->
+          <div class="dashboard-grid">
+            
+            <!-- Timing & Prep Quick Widget -->
+            <div class="card glass-card prep-status-card">
+              <div class="card-header">
+                <h3>System Status: Interview Readiness</h3>
+                <span class="badge badge-cyan">Pre-route</span>
+              </div>
+              <div class="card-body">
+                <ul class="readiness-list">
+                  <li>
+                    <div class="readiness-info">
+                      <span>Digital Logic & FSMs</span>
+                      <span class="readiness-pct" id="bar-logic-pct">0%</span>
+                    </div>
+                    <div class="progress-track"><div class="progress-fill" id="bar-logic" style="width: 0%"></div></div>
+                  </li>
+                  <li>
+                    <div class="readiness-info">
+                      <span>Verilog & SystemVerilog</span>
+                      <span class="readiness-pct" id="bar-sv-pct">0%</span>
+                    </div>
+                    <div class="progress-track"><div class="progress-fill" id="bar-sv" style="width: 0%"></div></div>
+                  </li>
+                  <li>
+                    <div class="readiness-info">
+                      <span>Clock Domain Crossing (CDC)</span>
+                      <span class="readiness-pct" id="bar-cdc-pct">0%</span>
+                    </div>
+                    <div class="progress-track"><div class="progress-fill" id="bar-cdc" style="width: 0%"></div></div>
+                  </li>
+                  <li>
+                    <div class="readiness-info">
+                      <span>Static Timing Analysis (STA)</span>
+                      <span class="readiness-pct" id="bar-sta-pct">0%</span>
+                    </div>
+                    <div class="progress-track"><div class="progress-fill" id="bar-sta" style="width: 0%"></div></div>
+                  </li>
+                </ul>
+                <div class="card-actions">
+                  <button class="btn btn-outline btn-full-width tab-trigger" data-target="prep">Launch Prep Suite</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pipeline Reminders & Motivation -->
+            <div class="card glass-card motivation-card">
+              <div class="card-header">
+                <h3>Pipeline Monitor</h3>
+                <span class="pulse-dot"></span>
+              </div>
+              <div class="card-body">
+                <div class="quote-box">
+                  <p class="quote-text" id="daily-quote">"Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live. For RTL, always code as if the synthesis tool is actively trying to turn your design into latches."</p>
+                  <span class="quote-author">— Synthesis Pro-Tip</span>
+                </div>
+                
+                <div class="upcoming-interviews-widget">
+                  <h4>Upcoming Events</h4>
+                  <ul id="upcoming-events-list" class="event-list">
+                    <li class="empty-list-msg">No upcoming interviews. Add some in the Job Tracker!</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Access / Protocols Widget -->
+            <div class="card glass-card protocols-quick-card">
+              <div class="card-header">
+                <h3>Signal Architect Shortcuts</h3>
+              </div>
+              <div class="card-body">
+                <p class="card-desc">Practice and inspect essential protocols commonly tested in technical rounds:</p>
+                <div class="protocol-grid">
+                  <div class="protocol-shortcut-btn" data-preset="axi">
+                    <div class="p-icon">AXI</div>
+                    <span>AXI4 Handshake</span>
+                  </div>
+                  <div class="protocol-shortcut-btn" data-preset="apb">
+                    <div class="p-icon">APB</div>
+                    <span>APB Read Transfer</span>
+                  </div>
+                  <div class="protocol-shortcut-btn" data-preset="fifo">
+                    <div class="p-icon">FIFO</div>
+                    <span>FIFO Flags</span>
+                  </div>
+                  <div class="protocol-shortcut-btn" data-preset="cdc">
+                    <div class="p-icon">CDC</div>
+                    <span>2-FF Synchronizer</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </section>
+
+        <!-- JOB TRACKER TAB -->
+        <section id="tracker-panel" class="tab-panel">
+          <div class="tracker-actions-bar">
+            <div class="tracker-stats">
+              <span class="total-applications-badge"><strong id="total-jobs-count">0</strong> total applications</span>
+            </div>
+            <button id="add-job-btn" class="btn btn-primary btn-with-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              <span>New Position</span>
+            </button>
+          </div>
+
+          <!-- Kanban Board -->
+          <div class="kanban-board">
+            <!-- Column 1: Wishlist -->
+            <div class="kanban-column" data-status="wishlist">
+              <div class="column-header">
+                <span class="column-title">Wishlist</span>
+                <span class="column-count" id="count-wishlist">0</span>
+              </div>
+              <div class="column-cards-container" id="cards-wishlist" ondragover="allowDrop(event)" ondrop="dropCard(event)">
+                <!-- Cards will render here -->
+              </div>
+            </div>
+
+            <!-- Column 2: Applied -->
+            <div class="kanban-column" data-status="applied">
+              <div class="column-header">
+                <span class="column-title">Applied</span>
+                <span class="column-count" id="count-applied">0</span>
+              </div>
+              <div class="column-cards-container" id="cards-applied" ondragover="allowDrop(event)" ondrop="dropCard(event)">
+                <!-- Cards will render here -->
+              </div>
+            </div>
+
+            <!-- Column 3: Tech Interview -->
+            <div class="kanban-column" data-status="tech_interview">
+              <div class="column-header">
+                <span class="column-title">Tech Round</span>
+                <span class="column-count" id="count-tech_interview">0</span>
+              </div>
+              <div class="column-cards-container" id="cards-tech_interview" ondragover="allowDrop(event)" ondrop="dropCard(event)">
+                <!-- Cards will render here -->
+              </div>
+            </div>
+
+            <!-- Column 4: Manager/HR Round -->
+            <div class="kanban-column" data-status="hr_round">
+              <div class="column-header">
+                <span class="column-title">Manager/HR</span>
+                <span class="column-count" id="count-hr_round">0</span>
+              </div>
+              <div class="column-cards-container" id="cards-hr_round" ondragover="allowDrop(event)" ondrop="dropCard(event)">
+                <!-- Cards will render here -->
+              </div>
+            </div>
+
+            <!-- Column 5: Offer Received -->
+            <div class="kanban-column" data-status="offer">
+              <div class="column-header">
+                <span class="column-title">Offer! 🎉</span>
+                <span class="column-count" id="count-offer">0</span>
+              </div>
+              <div class="column-cards-container" id="cards-offer" ondragover="allowDrop(event)" ondrop="dropCard(event)">
+                <!-- Cards will render here -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SILICON MATCHER (RESUME ANALYZER) TAB -->
+        <section id="matcher-panel" class="tab-panel">
+          <div class="matcher-layout">
+            <!-- Left Side: Input Area & Quick Search Links -->
+            <div class="card-group" style="display: flex; flex-direction: column; gap: 1.5rem; width: 100%;">
+              <div class="card glass-card matcher-input-card">
+                <div class="card-header">
+                  <h3>Paste Your Resume</h3>
+                  <span class="badge badge-cyan">Text Parser</span>
+                </div>
+                <div class="card-body">
+                  <p class="card-desc">Paste your resume text below or upload a text file to scan it for RTL design keywords, verify company match score, and crawl live openings.</p>
+                  
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <div class="file-upload-wrapper">
+                      <label for="resume-file-input" class="btn btn-outline btn-sm" style="margin: 0; cursor: pointer;">
+                        <span>Upload .txt file</span>
+                      </label>
+                      <input type="file" id="resume-file-input" accept=".txt,.md" style="display: none;">
+                    </div>
+                    <button type="button" class="card-btn" id="btn-load-sample-resume" style="font-size: 0.8rem;">Load Sample RTL Resume</button>
+                  </div>
+
+                  <textarea id="resume-text-input" class="form-input resume-textarea" placeholder="Paste your resume text here (e.g. Experience with Verilog, SystemVerilog, UVM, CDC, STA, AXI, ASIC Design, synthesis, etc.)..."></textarea>
+                  <div class="matcher-actions" style="margin-top: 1.25rem; display: flex; gap: 0.75rem; justify-content: flex-end;">
+                    <button type="button" class="btn btn-outline" id="clear-resume-btn">Clear</button>
+                    <button type="button" class="btn btn-primary" id="analyze-resume-btn">Analyze & Crawl Jobs</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick Search Portal for closed ATS systems -->
+              <div class="card glass-card search-portal-card">
+                <div class="card-header">
+                  <h3>Major Chipmaker Job Portals</h3>
+                  <span class="badge badge-orange">Closed boards</span>
+                </div>
+                <div class="card-body">
+                  <p class="card-desc">These corporations use private Workday or internal boards that block crawler engines. Use these pre-loaded direct searches:</p>
+                  <div class="search-links-grid" id="search-links-container" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem;">
+                    <!-- Populated dynamically from mockData.js -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Side: Results Area (Company Scores vs Live Openings) -->
+            <div class="card glass-card matcher-results-card">
+              <div class="card-header" style="flex-direction: column; align-items: stretch; gap: 0.75rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                  <h3 id="matcher-right-title">Compatibility Analysis</h3>
+                  <span class="badge badge-purple" id="match-results-count">0 Companies</span>
+                </div>
+                <!-- Subtabs for Results -->
+                <div class="matcher-results-subnav" style="display: flex; gap: 0.5rem; border-top: 1px solid rgba(255,255,255,0.04); padding-top: 0.5rem;">
+                  <button type="button" class="filter-chip active" id="btn-show-scores">Company Matches</button>
+                  <button type="button" class="filter-chip" id="btn-show-crawler">
+                    Live Openings 
+                    <span class="pulse-dot" style="display: inline-block; width: 6px; height: 6px; margin-left: 4px; vertical-align: middle; background-color: var(--primary-cyan); box-shadow: 0 0 6px var(--primary-cyan);"></span>
+                  </button>
+                </div>
+              </div>
+              
+              <div class="card-body matcher-results-body">
+                <!-- PANEL A: Company Match Scores -->
+                <div id="company-scores-view">
+                  <p class="card-desc" id="matcher-results-desc">Paste your resume and click 'Analyze & Crawl' to compute keyword match indexes.</p>
+                  
+                  <div class="matcher-results-list" id="matcher-results-list">
+                    <div class="matcher-placeholder">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="48" height="48" style="color: var(--text-muted); margin-bottom: 1rem;"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+                      <p>Enter your resume credentials to run the matching compiler.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- PANEL B: Live Crawl Results -->
+                <div id="live-crawler-view" class="hidden">
+                  <!-- Crawler loading progress indicator -->
+                  <div id="crawler-loading-status" class="hidden" style="margin-bottom: 1.25rem;">
+                    <div class="progress-track" style="height: 8px; margin-bottom: 0.5rem;">
+                      <div class="progress-fill" id="crawler-progress-bar" style="width: 0%"></div>
+                    </div>
+                    <p class="crawler-loading-text" id="crawler-loading-step" style="font-size: 0.8rem; color: var(--primary-cyan); font-family: var(--font-code);">Initializing job scanner...</p>
+                  </div>
+
+                  <!-- Crawler Filter Controls -->
+                  <div class="crawler-filter-row" style="display: flex; gap: 0.75rem; margin-bottom: 1.25rem; background: rgba(255, 255, 255, 0.02); padding: 0.75rem; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.05);">
+                    <div style="flex: 1;">
+                      <label for="crawler-date-filter" style="font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 0.25rem; display: block; font-weight: 500;">Date Posted</label>
+                      <select id="crawler-date-filter" class="form-input" style="padding: 0.4rem 0.75rem; font-size: 0.8rem; height: auto;">
+                        <option value="all">All Openings</option>
+                        <option value="1">Past Week (7 days)</option>
+                        <option value="2">Past 2 Weeks</option>
+                        <option value="4">Past Month (30 days)</option>
+                      </select>
+                    </div>
+                    <div style="flex: 1;">
+                      <label for="crawler-min-score" style="font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 0.25rem; display: block; font-weight: 500;">Min Match Score</label>
+                      <select id="crawler-min-score" class="form-input" style="padding: 0.4rem 0.75rem; font-size: 0.8rem; height: auto;">
+                        <option value="20">20% Match</option>
+                        <option value="30">30% Match</option>
+                        <option value="40">40% Match</option>
+                        <option value="50" selected>50% Match</option>
+                        <option value="60">60% Match</option>
+                        <option value="70">70% Match</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="matcher-results-list" id="crawler-results-list">
+                    <div class="matcher-placeholder" id="crawler-placeholder-msg">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="48" height="48" style="color: var(--text-muted); margin-bottom: 1rem;"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                      <p>Crawl live Greenhouse/Lever listings for openings with &lt;3 YOE and &gt;50% match score.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- INTERVIEW PREP TAB -->
+        <section id="prep-panel" class="tab-panel">
+          <!-- Subtab Navigation -->
+          <div class="subtab-nav">
+            <button class="subtab-btn active" data-subtarget="flashcards-section">Flashcards</button>
+            <button class="subtab-btn" data-subtarget="quiz-section">Practice Quiz</button>
+          </div>
+
+          <!-- Flashcards Section -->
+          <div id="flashcards-section" class="subtab-content active">
+            <div class="prep-header-bar">
+              <div class="category-filters" id="flashcard-filters">
+                <button class="filter-chip active" data-filter="All">All Topics</button>
+                <button class="filter-chip" data-filter="Digital Design">Digital Design</button>
+                <button class="filter-chip" data-filter="Verilog / SystemVerilog">Verilog/SV</button>
+                <button class="filter-chip" data-filter="Clock Domain Crossing (CDC)">CDC</button>
+                <button class="filter-chip" data-filter="Static Timing Analysis (STA)">STA</button>
+                <button class="filter-chip" data-filter="Bus Protocols">Protocols</button>
+              </div>
+              <div class="flashcard-counter">
+                Card <span id="card-current-index">1</span> of <span id="card-total-count">0</span>
+              </div>
+            </div>
+
+            <div class="flashcard-container">
+              <div class="flashcard" id="flashcard-element">
+                <div class="flashcard-inner">
+                  <div class="flashcard-front">
+                    <span class="card-category" id="card-front-category">Category</span>
+                    <div class="card-content">
+                      <p id="card-front-text">Flashcard front text question will go here.</p>
+                    </div>
+                    <span class="card-hint">Click card to reveal answer</span>
+                  </div>
+                  <div class="flashcard-back">
+                    <span class="card-category" id="card-back-category">Category - Answer</span>
+                    <div class="card-content">
+                      <p id="card-back-text">Flashcard back text details will go here.</p>
+                    </div>
+                    <span class="card-hint">Click card to flip back</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flashcard-controls">
+              <button class="btn btn-outline" id="prev-card-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                <span>Prev</span>
+              </button>
+              <button class="btn btn-outline" id="mark-mastered-btn">
+                <span>Toggle Review Status</span>
+              </button>
+              <button class="btn btn-outline" id="next-card-btn">
+                <span>Next</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Quiz Section -->
+          <div id="quiz-section" class="subtab-content">
+            <div class="quiz-container">
+              <div class="quiz-sidebar">
+                <div class="card glass-card score-board-card">
+                  <h3>Quiz Control</h3>
+                  <div class="score-grid">
+                    <div class="score-item">
+                      <span class="score-label">Score</span>
+                      <span class="score-val" id="quiz-score-val">0</span>
+                    </div>
+                    <div class="score-item">
+                      <span class="score-label">Attempted</span>
+                      <span class="score-val" id="quiz-attempted-val">0</span>
+                    </div>
+                  </div>
+                  <button class="btn btn-primary btn-full-width" id="reset-quiz-btn">Reset Quiz</button>
+                </div>
+              </div>
+
+              <div class="quiz-main">
+                <div class="quiz-progress-bar-container">
+                  <div class="quiz-progress-fill" id="quiz-progress" style="width: 0%"></div>
+                </div>
+
+                <div class="card glass-card quiz-card" id="quiz-card-content">
+                  <div class="quiz-question-header">
+                    <span class="badge badge-purple" id="quiz-question-category">Category</span>
+                    <span class="quiz-question-num" id="quiz-question-num">Question 1</span>
+                  </div>
+                  <h3 class="quiz-question-text" id="quiz-question-text">Question text loads here...</h3>
+                  
+                  <div class="quiz-options-list" id="quiz-options-container">
+                    <!-- Option items generated via JS -->
+                  </div>
+
+                  <div class="quiz-explanation-box hidden" id="quiz-explanation-container">
+                    <h4>Explanation:</h4>
+                    <p id="quiz-explanation-text">Explanation text here...</p>
+                  </div>
+
+                  <div class="quiz-card-footer">
+                    <button class="btn btn-primary hidden" id="quiz-next-btn">Next Question</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SIGNAL ARCHITECT (WAVEFORM VISUALIZER) TAB -->
+        <section id="waveform-panel" class="tab-panel">
+          <div class="waveform-layout">
+            <div class="waveform-controls-panel card glass-card">
+              <h3>Signal Controls</h3>
+              <p class="card-desc">Click timing cells on the right to toggle levels: <strong>0 → 1 → X (Unknown) → Z (Hi-Z)</strong>, or double-click to label data waves.</p>
+              
+              <div class="waveform-presets-selector">
+                <label for="waveform-preset-dropdown">Select Protocol Preset:</label>
+                <select id="waveform-preset-dropdown" class="form-input">
+                  <option value="none">-- Custom (Start Blank) --</option>
+                  <option value="axi" selected>AXI4 VALID / READY Handshake</option>
+                  <option value="apb">APB 3-Cycle Read Transfer</option>
+                  <option value="fifo">FIFO Write/Flags Condition</option>
+                  <option value="cdc">2-FF Synchronizer Timing</option>
+                </select>
+              </div>
+
+              <div class="signals-list-editor">
+                <h4>Signal Configuration</h4>
+                <div id="signals-rows-config">
+                  <!-- JS will generate controls for signals -->
+                </div>
+                <button class="btn btn-outline btn-with-icon" id="add-signal-row-btn" style="margin-top: 1rem;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                  <span>Add Custom Signal</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="waveform-viewer-panel card glass-card">
+              <div class="viewer-header">
+                <h3>Timing Diagram</h3>
+                <span class="waveform-badge">Interactive SVG</span>
+              </div>
+              <div class="waveform-container-scroll">
+                <!-- SVG Canvas where lines will render -->
+                <div id="svg-render-wrapper">
+                  <!-- Generated SVG -->
+                </div>
+              </div>
+
+              <!-- Interactive timeline editor matrix -->
+              <div class="matrix-editor-container">
+                <h4>Interactive Cycle Editor</h4>
+                <div class="matrix-scroll-wrapper">
+                  <table class="editor-matrix-table" id="timing-editor-matrix">
+                    <thead>
+                      <tr id="matrix-header-row">
+                        <th>Signal</th>
+                        <th>Type</th>
+                        <!-- Cycle headers 1-16 -->
+                      </tr>
+                    </thead>
+                    <tbody id="matrix-body-rows">
+                      <!-- Grid rows generated dynamically -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- COMPANIES DIRECTORY TAB -->
+        <section id="directory-panel" class="tab-panel">
+          <div class="directory-filter-bar">
+            <div class="search-box-container">
+              <input type="text" id="company-search" class="form-input" placeholder="Search by name, focus topics, location...">
+            </div>
+            <div class="directory-filters">
+              <select id="company-type-filter" class="form-input">
+                <option value="all">All Company Types</option>
+                <option value="Fabless">Fabless (Design Only)</option>
+                <option value="IDM">IDM (Design & Fab)</option>
+                <option value="IP/EDA">IP & EDA Vendors</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="company-grid" id="company-cards-grid">
+            <!-- Company profile cards populated dynamically -->
+          </div>
+        </section>
+
+        <!-- RTL REFERENCE TAB -->
+        <section id="sandbox-panel" class="tab-panel">
+          <div class="sandbox-layout">
+            <div class="sandbox-sidebar">
+              <h3>Design Portfolio Templates</h3>
+              <p class="card-desc">Review critical logic architectures frequently asked in coding challenges.</p>
+              <ul class="sandbox-menu" id="sandbox-templates-menu">
+                <!-- Populated dynamically -->
+              </ul>
+            </div>
+
+            <div class="sandbox-main">
+              <div class="card glass-card code-view-card">
+                <div class="code-header">
+                  <h3 id="template-title">RTL Template Title</h3>
+                  <span class="badge badge-cyan">Verilog HDL</span>
+                </div>
+                <div class="code-body-description" id="template-desc">
+                  RTL description goes here.
+                </div>
+                <div class="code-container">
+                  <pre><code id="template-code-block" class="language-verilog">// Code loads here</code></pre>
+                  <button class="btn btn-outline btn-sm copy-btn" id="copy-code-btn">Copy Code</button>
+                </div>
+                
+                <div class="code-key-points">
+                  <h4>Interview Talking Points</h4>
+                  <ul id="template-key-points-list">
+                    <!-- Populated dynamically -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- APPLICATION DETAIL / EDIT MODAL -->
+  <div class="modal-backdrop hidden" id="job-modal">
+    <div class="modal-box glass-card animate-zoom">
+      <div class="modal-header">
+        <h3 id="modal-title">Add Job Application</h3>
+        <button class="close-modal-btn" id="close-modal-x">&times;</button>
+      </div>
+      <form id="job-form" class="modal-form">
+        <input type="hidden" id="job-id-field">
+        
+        <div class="form-group-row">
+          <div class="form-group">
+            <label for="form-company">Company <span class="required">*</span></label>
+            <input type="text" id="form-company" class="form-input" required placeholder="e.g. NVIDIA">
+          </div>
+          <div class="form-group">
+            <label for="form-role">Role/Title <span class="required">*</span></label>
+            <input type="text" id="form-role" class="form-input" required placeholder="e.g. RTL Design Engineer">
+          </div>
+        </div>
+
+        <div class="form-group-row">
+          <div class="form-group">
+            <label for="form-status">Status</label>
+            <select id="form-status" class="form-input">
+              <option value="wishlist">Wishlist</option>
+              <option value="applied">Applied</option>
+              <option value="tech_interview">Technical Round</option>
+              <option value="hr_round">Manager/HR Round</option>
+              <option value="offer">Offer Received</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="form-location">Location</label>
+            <input type="text" id="form-location" class="form-input" placeholder="e.g. Santa Clara, CA (Hybrid)">
+          </div>
+        </div>
+
+        <div class="form-group-row">
+          <div class="form-group">
+            <label for="form-salary">Compensation Details</label>
+            <input type="text" id="form-salary" class="form-input" placeholder="e.g. $140,000 + RSU">
+          </div>
+          <div class="form-group">
+            <label for="form-date">Key Date (Applied/Interview)</label>
+            <input type="date" id="form-date" class="form-input">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="form-url">Job Listing URL</label>
+          <input type="url" id="form-url" class="form-input" placeholder="https://careers.nvidia.com/...">
+        </div>
+
+        <div class="form-group">
+          <label for="form-notes">Notes / Questions Asked</label>
+          <textarea id="form-notes" class="form-input" rows="4" placeholder="Log technical interview questions, preparation points, or recruiter details here..."></textarea>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" id="delete-job-btn">Delete Application</button>
+          <div class="footer-right">
+            <button type="button" class="btn btn-outline" id="cancel-job-btn">Cancel</button>
+            <button type="submit" class="btn btn-primary" id="save-job-btn">Save Position</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- External Script Dependencies -->
+  <script src="mockData.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
