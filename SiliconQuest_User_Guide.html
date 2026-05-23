@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SiliconQuest - RTL Career Accelerator Guide</title>
+  <style>
+    /* Premium "Deep Silicon" Document Theme */
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+    :root {
+      --primary: #00A3FF;
+      --secondary: #4FACFE;
+      --dark: #0F172A;
+      --light-bg: #F8FAFC;
+      --border: #E2E8F0;
+      --text: #334155;
+      --text-heading: #0F172A;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: var(--light-bg);
+      padding: 3rem 1.5rem;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      padding: 4rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--border);
+    }
+
+    /* Cover Page Elements */
+    .header {
+      text-align: center;
+      margin-bottom: 4rem;
+      border-bottom: 3px double var(--primary);
+      padding-bottom: 2rem;
+    }
+
+    .logo-badge {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      background: rgba(0, 163, 255, 0.08);
+      color: var(--primary);
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.75rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      color: #64748B;
+      font-weight: 500;
+    }
+
+    h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.75rem;
+      color: var(--text-heading);
+      border-left: 5px solid var(--primary);
+      padding-left: 0.75rem;
+      margin-top: 3rem;
+      margin-bottom: 1.25rem;
+      page-break-after: avoid;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+      font-size: 1.05rem;
+    }
+
+    /* List styling */
+    ul {
+      margin-bottom: 1.5rem;
+      padding-left: 1.75rem;
+    }
+
+    li {
+      margin-bottom: 0.75rem;
+      font-size: 1.05rem;
+    }
+
+    li strong {
+      color: var(--text-heading);
+    }
+
+    /* Feature Grid / Cards */
+    .feature-card {
+      background: var(--light-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      page-break-inside: avoid;
+    }
+
+    .feature-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .highlight-box {
+      background: rgba(79, 172, 254, 0.05);
+      border-left: 4px solid var(--secondary);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 2rem 0;
+      font-style: italic;
+    }
+
+    /* Instructions Box */
+    .setup-steps {
+      background: #0F172A;
+      color: #F8FAFC;
+      padding: 2rem;
+      border-radius: 8px;
+      margin-top: 2rem;
+    }
+
+    .setup-steps h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      color: #00F2FE;
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+
+    .setup-steps ol {
+      padding-left: 1.25rem;
+    }
+
+    .setup-steps li {
+      color: #94A3B8;
+      margin-bottom: 0.75rem;
+    }
+
+    .setup-steps li strong {
+      color: #F8FAFC;
+    }
+
+    /* Print PDF styles */
+    @media print {
+      body {
+        background: #FFFFFF;
+        padding: 0;
+      }
+      .container {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .feature-card {
+        border: 1px solid #CBD5E1;
+        background: #FFFFFF !important;
+      }
+      .setup-steps {
+        background: #F8FAFC !important;
+        color: #0F172A !important;
+        border: 1px solid #CBD5E1;
+      }
+      .setup-steps h3 {
+        color: #0F172A !important;
+      }
+      .setup-steps li {
+        color: #334155 !important;
+      }
+      .setup-steps li strong {
+        color: #0F172A !important;
+      }
+      @page {
+        margin: 2cm;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Cover Header -->
+    <div class="header">
+      <span class="logo-badge">SiliconQuest 🚀</span>
+      <h1>Hardware Career Accelerator</h1>
+      <p class="subtitle">A Professional Companion Suite for Yaswanthini S</p>
+    </div>
+
+    <!-- Intro -->
+    <h2>About SiliconQuest</h2>
+    <p>
+      <strong>SiliconQuest</strong> is a premium, interactive web suite custom-built to accelerate your semiconductor career search, streamline job applications, and refine your technical RTL design interview readiness. 
+    </p>
+    <p>
+      It contains 5 integrated modules specifically curated for RTL design engineering roles, clock domain crossing (CDC) validation, static timing analysis (STA) concepts, and standard protocols.
+    </p>
+
+    <!-- Key Modules -->
+    <h2>Key Companion Modules</h2>
+
+    <div class="feature-card">
+      <div class="feature-title">🔍 Silicon Matcher (Parser & Crawler)</div>
+      <p>
+        Compare your resume against top-tier semiconductor profiles and scan live boards:
+      </p>
+      <ul>
+        <li><strong>ATS Keyword Parser:</strong> Evaluates your resume for 43 key RTL skills (e.g. Verilog, CDC, LEC, DFT, Genus, AXI) and calculates a match percentage based on the job's requirement density.</li>
+        <li><strong>Interactive Date Posted Filter:</strong> Instantly filter crawled jobs down to the past 24 hours, past week, or past month.</li>
+        <li><strong>Automatic live crawler:</strong> Fetches live Greenhouse and Lever job postings for major chipmakers in parallel.</li>
+        <li><strong>Direct Careers Apply Portal:</strong> Direct-to-portal link buttons let you bypass complex application routing and submit resumes directly.</li>
+      </ul>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-title">📋 Job Tracker Kanban Board</div>
+      <p>
+        Stay organized by managing your semiconductor job applications:
+      </p>
+      <ul>
+        <li>Drag-and-drop cards across pipelines: **Wishlist**, **Applied**, **Technical Round**, **Manager/HR**, and **Offer Received! 🎉**</li>
+        <li>Log key dates, compensation ranges, recruiter contacts, and technical questions asked in rounds.</li>
+      </ul>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-title">⚡ Signal Architect (Interactive Timing Diagrams)</div>
+      <p>
+        Interactive SVG-based waveform generator to visualize protocol states and clock edges:
+      </p>
+      <ul>
+        <li><strong>Protocol Presets:</strong> Pre-loaded waveforms for AXI4 Read/Write Handshake, APB 3-Cycle Read Transfer, FIFO Flags, and 2-FF CDC Synchronizers.</li>
+        <li><strong>Interactive Cycle Editor:</strong> Click grid cells to toggle states (<code>0</code> $\rightarrow$ <code>1</code> $\rightarrow$ <code>X</code> $\rightarrow$ <code>Z</code>) or double-click to add custom text labels.</li>
+      </ul>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-title">🧠 Practice Quiz & Flashcards Suite</div>
+      <p>
+        Review high-frequency semiconductor technical concepts:
+      </p>
+      <ul>
+        <li><strong>Flashcards:</strong> Study categories like Clock Domain Crossing, Digital Design hazards, STA skew, and Bus protocols. Mark cards as mastered to track your readiness.</li>
+        <li><strong>Interactive Quiz:</strong> Test yourself on STA setup/hold, metastabilities, non-blocking assignments, and APB setups, complete with detailed explanations for correct and incorrect answers.</li>
+      </ul>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-title">📁 RTL Reference Library & Companies Directory</div>
+      <p>
+        Quick access to production templates and target company focuses:
+      </p>
+      <ul>
+        <li><strong>Reference Library:</strong> Synthesizable RTL templates commonly tested in interview coding tests (e.g. Synchronous FIFO, 50% Duty Cycle Clock Divider by 3, Gray Counter).</li>
+        <li><strong>Companies Profiles:</strong> Focus areas (e.g. branch predictors for AMD, interconnects for NVIDIA), locations, and interview difficulty ratings.</li>
+      </ul>
+    </div>
+
+    <!-- Quote Box -->
+    <div class="highlight-box">
+      "Your timing parameters are locked, your synthesizers are optimized, and your CDC checks are clean. Let's land that dream job!"
+    </div>
+
+    <!-- How to Save as PDF instructions -->
+    <div class="setup-steps">
+      <h3>How to Generate the PDF to share with her:</h3>
+      <ol>
+        <li>Open this guide file (<strong>SiliconQuest_User_Guide.html</strong>) in any web browser (Chrome, Edge, Safari).</li>
+        <li>Press <strong>Ctrl + P</strong> (Windows) or <strong>Cmd + P</strong> (Mac) on your keyboard to open the print dialog.</li>
+        <li>Under the <strong>Destination</strong> dropdown, choose <strong>Save as PDF</strong> (instead of your physical printer).</li>
+        <li>Click <strong>Save</strong> and choose where to save the document on your computer.</li>
+        <li>You will get a beautifully formatted, print-ready PDF user guide that you can send directly to her!</li>
+      </ol>
+    </div>
+
+  </div>
+</body>
+</html>
